@@ -1,22 +1,22 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import Web3 from 'web3';
-
-const web3 = new Web3();
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { initializeState } from './redux/actions/initializeStateAction';
 
 function App() {
   const dispatch = useDispatch();
+  const blockArray = useSelector(state => state.blockArray);
 
   useEffect(() => {
-    dispatch(setBlockNumber());
-    dispatch(setBlockArray());
-  }, []);
-
-
+    dispatch(initializeState());
+  }, [dispatch]);
 
   return (
     <div>
-      la la la la la
+      <ul>
+        {blockArray.map(block => (
+          <li key={block}>{block}</li>
+        ))}
+      </ul>
     </div>
   );
 }

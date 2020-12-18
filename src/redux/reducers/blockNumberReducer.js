@@ -1,10 +1,10 @@
-import { WATCH_SET_BLOCK_NUMBER_SAGA } from '../types';
+import { SET_BLOCK_NUMBER } from '../types';
 
 const initialState = null;
 
 const blockNumberReducer = (state = initialState, action) => {
   switch (action.type) {
-    case WATCH_SET_BLOCK_NUMBER_SAGA:
+    case SET_BLOCK_NUMBER:
       return action.payload;
 
     default:

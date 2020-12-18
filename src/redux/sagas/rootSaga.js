@@ -1,8 +1,8 @@
 import { all } from 'redux-saga/effects';
-import sampleSaga from './sampleSaga';
+import { watchInitializeStateSaga } from './initializeStateSagas';
 
 export default function* rootSaga()   {
   yield all([
-    sampleSaga()
+    watchInitializeStateSaga()
   ]);
 };
