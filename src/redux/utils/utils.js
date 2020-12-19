@@ -5,3 +5,9 @@ export const createBlockArray = blockNumber => {
   };
   return array;
 };
+
+export const delay = ms => {
+  return new Promise(res => {
+    setTimeout(res, ms);
+  });
+};

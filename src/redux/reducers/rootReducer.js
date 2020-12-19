@@ -6,7 +6,7 @@ import blockArrayReducer from './blockArrayReducer';
 
 const rootReducer = combineReducers({
   web3: web3Reducer,
-  paused: pauseReducer,
+  isPaused: pauseReducer,
   blockNumber: blockNumberReducer,
   blockArray: blockArrayReducer
 });
