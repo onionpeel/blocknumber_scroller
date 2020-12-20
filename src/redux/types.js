@@ -1,4 +1,8 @@
+export const LOADING_COMPLETE = 'LOADING_COMPLETE';
+
 export const PAUSE = 'PAUSE';
+export const RESUME_SAGA = 'RESUME_SAGA';
+export const RESUME = 'RESUME';
 
 export const SET_BLOCK_NUMBER = 'SET_BLOCK_NUMBER'
 export const SET_BLOCK_NUMBER_SAGA = 'SET_BLOCK_NUMBER_SAGA';

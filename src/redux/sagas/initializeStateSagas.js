@@ -7,7 +7,8 @@ import {
   INITIALIZE_STATE_SAGA,
   SET_BLOCK_NUMBER,
   SET_BLOCK_ARRAY,
-  RUN_TIMER_SAGA
+  RUN_TIMER_SAGA,
+  LOADING_COMPLETE
 } from '../types';
 
 function* initializeStateSaga() {
@@ -16,9 +17,11 @@ function* initializeStateSaga() {
 
   const blockNumber = yield web3.eth.getBlockNumber();
   yield put({ type: SET_BLOCK_NUMBER, payload: blockNumber });
-  
+
   const blockArray = createBlockArray(blockNumber);
   yield put({ type: SET_BLOCK_ARRAY, payload: blockArray });
+
+  yield put({type: LOADING_COMPLETE});
 
   yield put({ type: RUN_TIMER_SAGA });
 };

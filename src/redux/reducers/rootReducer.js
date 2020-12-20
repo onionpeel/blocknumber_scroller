@@ -1,14 +1,16 @@
 import { combineReducers } from 'redux';
-import pauseReducer from './pauseReducer';
+import isPausedReducer from './isPausedReducer';
 import blockNumberReducer from './blockNumberReducer';
 import web3Reducer from './web3Reducer';
 import blockArrayReducer from './blockArrayReducer';
+import isLoadingReducer from './isLoadingReducer';
 
 const rootReducer = combineReducers({
   web3: web3Reducer,
-  isPaused: pauseReducer,
+  isPaused: isPausedReducer,
   blockNumber: blockNumberReducer,
-  blockArray: blockArrayReducer
+  blockArray: blockArrayReducer,
+  isLoading: isLoadingReducer
 });
 
 export default rootReducer;
