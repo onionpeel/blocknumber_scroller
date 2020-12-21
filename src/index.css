@@ -3,6 +3,10 @@
   min-height: 100vh;
 }
 
+.h5 {
+  font-family: verdana, helvetica, sans-serif;
+}
+
 .explanation {
   text-align: center;
 }
@@ -34,10 +38,12 @@
   padding-top: 3em;
 }
 
-.pause-button {
-  outline: none;
+.btn-pause-button-variant {
+  background-color: #e3d1e2;
+  border: 1px solid black
 }
 
-.resume-button {
-
+.btn-resume-button-variant {
+  background-color: #d9d9d9;
+  border: 1px solid black;
 }

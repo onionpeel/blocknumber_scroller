@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { initializeState } from './redux/actions/initializeStateAction';
 import { Container } from 'react-bootstrap';
 import { Header } from './components/Header';
 import { BlockRow } from './components/BlockRow';
 import { Buttons } from './components/Buttons';
+import { ErrorMessage } from './components/ErrorMessage';
 
 function App() {
   const dispatch = useDispatch();
+  let error = useSelector(state => state.error);
 
   useEffect(() => {
     dispatch(initializeState());
@@ -21,8 +23,15 @@ function App() {
         These are the ten most recent blocks mined on Ethereum.  Updates occur every five seconds.
       </h5>
       <Container>
-        <Buttons />
-        <BlockRow />
+        {
+          error.error ?
+            <ErrorMessage error={error}/>
+            :
+            <div>
+              <Buttons />
+              <BlockRow />
+            </div>
+        }
       </Container>
     </div>
   );

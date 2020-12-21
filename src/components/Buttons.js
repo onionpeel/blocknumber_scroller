@@ -13,24 +13,27 @@ const dispatch = useDispatch();
           {
             !isPaused ?
               <Button
-                className="pause-button"
+                className="shadow-none"
+                variant="pause-button-variant"
                 onClick={() => dispatch(pause())}
               >
                 Pause incoming blocks
               </Button>
               :
               <Button
-                className="resume-button"
+                className="resume-button shadow-none"
+                variant="resume-button-variant"
                 onClick={() => dispatch(resume())}
               >
                 <Spinner
                   as="span"
                   animation="border"
+                  variant="secondary"
                   size="sm"
                   role="paused"
                   aria-hidden="true"
                 />
-                Resume
+                <span> Resume</span>
               </Button>
           }
         </div>
