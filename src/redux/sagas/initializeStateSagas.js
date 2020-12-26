@@ -12,7 +12,7 @@ import {
 } from '../types';
 
 function* initializeStateSaga() {
-  const web3 = new Web3('https://mainnet.infura.io/v3/d48e5bd25e57470aa15bdc3e9460f53b');
+  const web3 = new Web3(YOUR_INFURA_PROJECT_ID_GOES_HERE);
   yield put({ type: INITIALIZE_WEB3, payload: web3 });
 
   const blockNumber = yield web3.eth.getBlockNumber();
