@@ -12,7 +12,7 @@ import {
 } from '../types';
 
 function* initializeStateSaga() {
-  const web3 = new Web3(YOUR_INFURA_PROJECT_ID_GOES_HERE);
+  const web3 = new Web3(PASTE_INFURA_PROJECT_ID_AS_STRING_HERE);
   yield put({ type: INITIALIZE_WEB3, payload: web3 });
 
   const blockNumber = yield web3.eth.getBlockNumber();
